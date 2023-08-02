@@ -125,7 +125,7 @@ class UserProvider extends React.Component {
             const decodedToken = jwt.decode(token);
 
             const result = await twoFactorAuthPrompt.open({
-              supportedMethods: decodedToken.supported2FAMethods ?? ['totp', 'recovery_code'],
+              supportedMethods: decodedToken.supported2FAMethods ?? ['recovery_code'],
               authenticationOptions: decodedToken.authenticationOptions,
             });
 
